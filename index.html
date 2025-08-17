@@ -5,91 +5,70 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Angelic Ann La Paz | Portfolio</title>
   <style>
-    /* RESET */
     * {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
-    }
-    body {
       font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-      background: #fff;
-      color: #111;
     }
 
-    /* NAVBAR */
-    header {
-      position: fixed;
-      top: 0;
-      width: 100%;
+    body {
       background: #fff;
+      color: #111;
+      scroll-behavior: smooth;
+    }
+
+    /* Navbar */
+    nav {
       display: flex;
       justify-content: space-between;
       align-items: center;
-      padding: 15px 50px;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+      padding: 20px 50px;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      background: #fff;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
       z-index: 1000;
     }
-    .logo {
+
+    nav .logo {
       font-size: 1.5rem;
       font-weight: bold;
       color: #e75480;
     }
-    nav {
+
+    nav ul {
+      list-style: none;
       display: flex;
-      gap: 25px;
     }
-    nav a {
+
+    nav ul li {
+      margin-left: 25px;
+    }
+
+    nav ul li a {
       text-decoration: none;
       color: #111;
       font-weight: 500;
       transition: color 0.3s;
     }
-    nav a:hover {
+
+    nav ul li a:hover {
       color: #e75480;
     }
 
-    /* HAMBURGER */
-    .hamburger {
-      display: none;
-      flex-direction: column;
-      cursor: pointer;
-    }
-    .hamburger span {
-      height: 3px;
-      width: 25px;
-      background: #111;
-      margin: 4px 0;
-      border-radius: 3px;
-    }
-    .nav-links {
-      display: flex;
-      gap: 25px;
-    }
-    .nav-links.mobile {
-      display: none;
-      flex-direction: column;
-      position: absolute;
-      top: 60px;
-      right: 50px;
-      background: #fff;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.15);
-      padding: 15px 25px;
-      border-radius: 8px;
-    }
-    .nav-links.mobile a {
-      padding: 10px 0;
-    }
-
-    /* HERO */
+    /* Hero Section */
     .hero {
-      height: 100vh;
+      min-height: 100vh;
       display: flex;
       justify-content: center;
       align-items: center;
       padding: 100px 50px 50px;
       background: #ffffff;
     }
+
     .hero-container {
       display: flex;
       align-items: center;
@@ -98,6 +77,7 @@
       gap: 50px;
       flex-wrap: wrap;
     }
+
     .hero-photo {
       flex: 1;
       display: flex;
@@ -106,6 +86,7 @@
       transform: scale(0.8);
       animation: fadeInPhoto 1.5s ease forwards;
     }
+
     .profile-pic {
       width: 280px;
       height: 280px;
@@ -114,43 +95,50 @@
       box-shadow: 0 5px 20px rgba(0,0,0,0.15);
       border: 5px solid #f8c8dc;
     }
+
     @keyframes fadeInPhoto {
       to {
         opacity: 1;
         transform: scale(1);
       }
     }
+
     .hero-text {
       flex: 2;
       color: #111;
-      min-width: 280px;
       opacity: 0;
       transform: translateY(20px);
       animation: fadeInText 1.8s ease forwards 0.5s;
     }
+
     @keyframes fadeInText {
       to {
         opacity: 1;
         transform: translateY(0);
       }
     }
+
     .hero-text h1 {
       font-size: 2.5rem;
       margin-bottom: 15px;
       font-weight: bold;
     }
+
     .hero-text h1 span {
       color: #e75480;
     }
+
     .hero-text p {
       font-size: 1.1rem;
       margin-bottom: 20px;
       color: #444;
       max-width: 600px;
     }
+
     .buttons {
-      margin-bottom: 25px;
+      margin-bottom: 15px;
     }
+
     .btn {
       display: inline-block;
       padding: 12px 25px;
@@ -162,24 +150,27 @@
       font-weight: 600;
       transition: background 0.3s, transform 0.2s;
     }
+
     .btn:hover {
       background: #c7436b;
       transform: translateY(-2px);
     }
+
     .btn-outline {
       background: transparent;
       border: 2px solid #e75480;
       color: #e75480;
     }
+
     .btn-outline:hover {
       background: #e75480;
       color: white;
     }
 
-    /* SOCIAL ICONS */
     .socials {
-      margin-top: 10px;
+      margin-top: 15px;
     }
+
     .socials a {
       margin: 0 12px 0 0;
       color: #111;
@@ -187,62 +178,70 @@
       transition: color 0.3s, transform 0.2s;
       text-decoration: none;
     }
+
     .socials a:hover {
       color: #e75480;
       transform: scale(1.2);
     }
 
-    /* RESPONSIVE */
-    @media (max-width: 768px) {
-      nav {
-        display: none;
-      }
-      .hamburger {
-        display: flex;
-      }
-      .hero {
-        padding-top: 120px;
-      }
+    /* Sections placeholder */
+    section {
+      padding: 80px 50px;
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+
+    section h2 {
+      font-size: 2rem;
+      margin-bottom: 20px;
+      text-align: center;
+      color: #e75480;
+    }
+
+    /* Responsive Fix */
+    @media (max-width: 900px) {
       .hero-container {
         flex-direction: column;
         text-align: center;
       }
+
       .hero-text {
-        text-align: center;
+        margin-top: 20px;
+      }
+
+      nav {
+        flex-direction: column;
+        padding: 15px;
+      }
+
+      nav ul {
+        flex-wrap: wrap;
+        justify-content: center;
+        margin-top: 10px;
+      }
+
+      nav ul li {
+        margin: 10px;
       }
     }
   </style>
-  <!-- Icons -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
 </head>
 <body>
-  <!-- NAVBAR -->
-  <header>
-    <div class="logo">Angelic</div>
-    <nav class="nav-links">
-      <a href="#home">Home</a>
-      <a href="#about">About</a>
-      <a href="#projects">Projects</a>
-      <a href="#services">Services</a>
-      <a href="#skills">Skills</a>
-      <a href="#contact">Contact</a>
-    </nav>
-    <div class="hamburger" onclick="toggleMenu()">
-      <span></span>
-      <span></span>
-      <span></span>
-    </div>
-    <div class="nav-links mobile" id="mobileMenu">
-      <a href="#home" onclick="toggleMenu()">Home</a>
-      <a href="#about" onclick="toggleMenu()">About</a>
-      <a href="#projects" onclick="toggleMenu()">Projects</a>
-      <a href="#services" onclick="toggleMenu()">Services</a>
-      <a href="#skills" onclick="toggleMenu()">Skills</a>
-      <a href="#contact" onclick="toggleMenu()">Contact</a>
-    </div>
-  </header>
+  <!-- Navbar -->
+  <nav>
+    <div class="logo">AAL</div>
+    <ul>
+      <li><a href="#home">Home</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#services">Services</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
 
-  <!-- HERO -->
+  <!-- Hero Section -->
   <section class="hero" id="home">
     <div class="hero-container">
       <div class="hero-photo">
@@ -250,30 +249,25 @@
       </div>
       <div class="hero-text">
         <h1>Hello, I'm <span>Angelic Ann La Paz</span></h1>
-        <p>I am a virtual assistant with years of experience in customer service, admin support, and online business management. I help clients stay organized and achieve results.</p>
+        <p>I have solid experience in customer service and as a virtual assistant, helping clients stay organized and efficient. I’m passionate about delivering professional and reliable support.</p>
         <div class="buttons">
           <a href="#projects" class="btn">View My Work</a>
           <a href="resume.pdf" class="btn btn-outline" download>Download Resume</a>
         </div>
         <div class="socials">
           <a href="mailto:your-email@gmail.com" target="_blank" title="Gmail"><i class="fa-solid fa-envelope"></i></a>
-          <a href="https://linkedin.com/in/your-link" target="_blank" title="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
-          <a href="https://wa.me/639123456789" target="_blank" title="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
-          <a href="https://github.com/your-username" target="_blank" title="GitHub"><i class="fa-brands fa-github"></i></a>
+          <a href="https://linkedin.com/in/your-link" target="_blank" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+          <a href="https://wa.me/639123456789" target="_blank" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
         </div>
       </div>
     </div>
   </section>
 
-  <script>
-    function toggleMenu() {
-      const mobileMenu = document.getElementById("mobileMenu");
-      if (mobileMenu.style.display === "flex") {
-        mobileMenu.style.display = "none";
-      } else {
-        mobileMenu.style.display = "flex";
-      }
-    }
-  </script>
+  <!-- Placeholder sections -->
+  <section id="about"><h2>About Me</h2></section>
+  <section id="projects"><h2>Projects</h2></section>
+  <section id="services"><h2>Services</h2></section>
+  <section id="skills"><h2>Skills</h2></section>
+  <section id="contact"><h2>Contact</h2></section>
 </body>
 </html>
