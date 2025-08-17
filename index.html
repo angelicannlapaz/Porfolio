@@ -1,17 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Angelic Ann La Paz - Portfolio</title>
-  <!-- Font Awesome for social icons -->
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Angelic Ann La Paz | Portfolio</title>
   <style>
-    body {
+    /* Reset */
+    * {
       margin: 0;
-      font-family: "Poppins", sans-serif;
-      background-color: #fff;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    body {
+      background: #fff;
       color: #111;
+      scroll-behavior: smooth; /* smooth scrolling */
     }
 
     /* Navbar */
@@ -20,44 +25,51 @@
       justify-content: space-between;
       align-items: center;
       padding: 20px 50px;
-      background: #111;
       position: fixed;
-      width: 100%;
       top: 0;
+      left: 0;
+      width: 100%;
+      background: #fff;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
       z-index: 1000;
     }
+
     nav .logo {
       font-size: 1.5rem;
       font-weight: bold;
       color: #e75480;
     }
+
     nav ul {
       list-style: none;
       display: flex;
-      margin: 0;
-      padding: 0;
     }
+
     nav ul li {
       margin-left: 25px;
     }
+
     nav ul li a {
       text-decoration: none;
-      color: white;
+      color: #111;
       font-weight: 500;
       transition: color 0.3s;
     }
+
     nav ul li a:hover {
       color: #e75480;
     }
 
-    /* Hero Section */
+    /* Hero */
     .hero {
-      height: 100vh;
+      min-height: 100vh;
       display: flex;
       justify-content: center;
       align-items: center;
       padding: 100px 50px 50px;
+      background: #ffffff;
     }
+
     .hero-container {
       display: flex;
       align-items: center;
@@ -65,11 +77,13 @@
       width: 100%;
       gap: 50px;
     }
+
     .hero-photo {
       flex: 1;
       display: flex;
       justify-content: center;
     }
+
     .profile-pic {
       width: 280px;
       height: 280px;
@@ -78,26 +92,33 @@
       box-shadow: 0 5px 20px rgba(0,0,0,0.15);
       border: 5px solid #f8c8dc;
     }
+
     .hero-text {
       flex: 2;
+      color: #111;
     }
+
     .hero-text h1 {
       font-size: 2.5rem;
       margin-bottom: 15px;
       font-weight: bold;
     }
+
     .hero-text h1 span {
       color: #e75480;
     }
+
     .hero-text p {
       font-size: 1.1rem;
       margin-bottom: 20px;
       color: #444;
       max-width: 600px;
     }
+
     .buttons {
       margin-bottom: 25px;
     }
+
     .btn {
       display: inline-block;
       padding: 12px 25px;
@@ -109,54 +130,94 @@
       font-weight: 600;
       transition: background 0.3s, transform 0.2s;
     }
+
     .btn:hover {
       background: #c7436b;
       transform: translateY(-2px);
     }
+
     .btn-outline {
       background: transparent;
       border: 2px solid #e75480;
       color: #e75480;
     }
+
     .btn-outline:hover {
       background: #e75480;
       color: white;
     }
+
     .socials a {
       margin: 0 12px 0 0;
       color: #111;
       font-size: 1.6rem;
       transition: color 0.3s, transform 0.2s;
     }
+
     .socials a:hover {
       color: #e75480;
       transform: scale(1.1);
     }
+
+    /* Sections placeholder */
+    section {
+      padding: 80px 50px;
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+
+    section h2 {
+      font-size: 2rem;
+      margin-bottom: 20px;
+      text-align: center;
+      color: #e75480;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .hero-container {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .hero-text {
+        margin-top: 20px;
+      }
+
+      nav {
+        flex-direction: column;
+      }
+
+      nav ul {
+        margin-top: 10px;
+      }
+    }
   </style>
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
 </head>
 <body>
   <!-- Navbar -->
   <nav>
-    <div class="logo">Angelic Ann La Paz</div>
+    <div class="logo">AAL</div>
     <ul>
-      <li><a href="#">Home</a></li>
-      <li><a href="#">About</a></li>
-      <li><a href="#">Projects</a></li>
-      <li><a href="#">Services</a></li>
-      <li><a href="#">Skills</a></li>
-      <li><a href="#">Contact</a></li>
+      <li><a href="#home">Home</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#services">Services</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#contact">Contact</a></li>
     </ul>
   </nav>
 
   <!-- Hero Section -->
-  <section class="hero">
+  <section class="hero" id="home">
     <div class="hero-container">
       <div class="hero-photo">
         <img src="your-photo.jpg" alt="Your Photo" class="profile-pic">
       </div>
       <div class="hero-text">
         <h1>Hello, I'm <span>Angelic Ann La Paz</span></h1>
-        <p>I am a Virtual Assistant with years of experience in customer service and admin support. I help businesses stay organized and thrive online.</p>
+        <p>I have solid experience in customer service and as a virtual assistant, helping clients stay organized and efficient. I’m passionate about delivering professional and reliable support.</p>
         <div class="buttons">
           <a href="#projects" class="btn">View My Work</a>
           <a href="resume.pdf" class="btn btn-outline" download>Download Resume</a>
@@ -169,5 +230,12 @@
       </div>
     </div>
   </section>
+
+  <!-- Placeholder sections -->
+  <section id="about"><h2>About Me</h2></section>
+  <section id="projects"><h2>Projects</h2></section>
+  <section id="services"><h2>Services</h2></section>
+  <section id="skills"><h2>Skills</h2></section>
+  <section id="contact"><h2>Contact</h2></section>
 </body>
 </html>
