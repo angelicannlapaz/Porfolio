@@ -1,16 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Angelic Ann La Paz | Portfolio</title>
   <link rel="stylesheet" href="style.css">
+
   <!-- Font Awesome for Icons -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
 <body>
-  <!-- Header / Navbar -->
+
+  <!-- Header -->
   <header>
     <div class="logo">AAL</div>
     <nav>
@@ -23,62 +24,38 @@
         <li><a href="#contact">Contact</a></li>
       </ul>
     </nav>
-    <div class="hamburger">
-      <i class="fas fa-bars"></i>
-    </div>
   </header>
 
   <!-- Hero Section -->
-  <section id="home" class="hero">
-    <div class="hero-left">
-      <img src="your-photo.jpg" alt="Angelic Ann La Paz">
-    </div>
-    <div class="hero-right">
-      <h1>Hello, I'm <span>Angelic Ann La Paz</span></h1>
-      <p>I am a Virtual Assistant and Customer Support Specialist with over 6 years of experience helping businesses streamline tasks and provide excellent client support.</p>
-      <div class="buttons">
-        <a href="#projects" class="btn">View My Work</a>
-        <a href="resume.pdf" class="btn btn-secondary" download>Download Resume</a>
+  <section class="hero" id="home">
+    <div class="hero-content">
+      <div class="hero-image animate-left">
+        <img src="your-photo.jpg" alt="Angelic Ann La Paz">
       </div>
-
-      <div class="socials">
-  <a href="mailto:your-email@gmail.com" target="_blank" title="Gmail">
-    <i class="fa-solid fa-envelope"></i>
-  </a>
-  <a href="https://linkedin.com/in/your-link" target="_blank" title="LinkedIn">
-    <i class="fa-brands fa-linkedin"></i>
-  </a>
-  <a href="https://wa.me/639123456789" target="_blank" title="WhatsApp">
-    <i class="fa-brands fa-whatsapp"></i>
-  </a>
-  <a href="https://github.com/your-username" target="_blank" title="GitHub">
-    <i class="fa-brands fa-github"></i>
-  </a>
-</div>
-
-      <div class="socials">
-        <a href="mailto:your-email@gmail.com" target="_blank" title="Gmail"><i class="fas fa-envelope"></i></a>
-        <a href="https://linkedin.com/in/your-link" target="_blank" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
-        <a href="https://wa.me/639123456789" target="_blank" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
-        <a href="https://github.com/your-username" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
+      <div class="hero-text animate-right">
+        <h1>Hello, I'm <span>Angelic Ann La Paz</span></h1>
+        <p>I’m a Virtual Assistant and Customer Service Specialist with years of experience helping businesses grow and stay organized.</p>
+        <div class="hero-buttons animate-fade">
+          <a href="#projects" class="btn">View My Work</a>
+          <a href="resume.pdf" class="btn btn-outline" download>Download Resume</a>
+        </div>
+        <div class="socials animate-fade">
+          <a href="mailto:your-email@gmail.com" target="_blank" title="Gmail">
+            <i class="fa-solid fa-envelope"></i>
+          </a>
+          <a href="https://linkedin.com/in/your-link" target="_blank" title="LinkedIn">
+            <i class="fa-brands fa-linkedin"></i>
+          </a>
+          <a href="https://wa.me/639123456789" target="_blank" title="WhatsApp">
+            <i class="fa-brands fa-whatsapp"></i>
+          </a>
+          <a href="https://github.com/your-username" target="_blank" title="GitHub">
+            <i class="fa-brands fa-github"></i>
+          </a>
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- Placeholder sections -->
-  <section id="about"><h2>About Me</h2></section>
-  <section id="projects"><h2>Projects</h2></section>
-  <section id="services"><h2>Services</h2></section>
-  <section id="skills"><h2>Skills</h2></section>
-  <section id="contact"><h2>Contact</h2></section>
-
-  <!-- Script for hamburger -->
-  <script>
-    const hamburger = document.querySelector('.hamburger');
-    const navLinks = document.querySelector('.nav-links');
-    hamburger.addEventListener('click', () => {
-      navLinks.classList.toggle('active');
-    });
-  </script>
 </body>
 </html>
