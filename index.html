@@ -126,6 +126,11 @@
 
     .hero-text h1 span {
       color: #e75480;
+      border-right: 2px solid #e75480; /* cursor effect */
+      padding-right: 5px;
+      white-space: nowrap;
+      overflow: hidden;
+      display: inline-block;
     }
 
     .hero-text p {
@@ -248,16 +253,16 @@
         <img src="your-photo.jpg" alt="Your Photo" class="profile-pic">
       </div>
       <div class="hero-text">
-        <h1>Hello, I'm <span>Angelic Ann La Paz</span></h1>
+        <h1>Hello, I'm <span id="typed-name"></span></h1>
         <p>I have solid experience in customer service and as a virtual assistant, helping clients stay organized and efficient. I’m passionate about delivering professional and reliable support.</p>
         <div class="buttons">
           <a href="#projects" class="btn">View My Work</a>
           <a href="resume.pdf" class="btn btn-outline" download>Download Resume</a>
         </div>
         <div class="socials">
-          <a href="mailto:your-email@gmail.com" target="_blank" title="Gmail"><i class="fa-solid fa-envelope"></i></a>
-          <a href="https://linkedin.com/in/your-link" target="_blank" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
-          <a href="https://wa.me/639123456789" target="_blank" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+          <a href="mailto:angelicannlapaz24@gmail.com" target="_blank" title="Gmail"><i class="fa-solid fa-envelope"></i></a>
+          <a href="www.linkedin.com/in/angelic-ann-la-paz-6665bb27a" target="_blank" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+          <a href="https://wa.me/639084623189" target="_blank" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
         </div>
       </div>
     </div>
@@ -269,5 +274,21 @@
   <section id="services"><h2>Services</h2></section>
   <section id="skills"><h2>Skills</h2></section>
   <section id="contact"><h2>Contact</h2></section>
+
+  <!-- Typing effect script -->
+  <script>
+    const typedName = "Angelic Ann La Paz";
+    let i = 0;
+    const speed = 100; // typing speed in ms
+
+    function typeWriter() {
+      if (i < typedName.length) {
+        document.getElementById("typed-name").innerHTML += typedName.charAt(i);
+        i++;
+        setTimeout(typeWriter, speed);
+      }
+    }
+    window.onload = typeWriter;
+  </script>
 </body>
 </html>
