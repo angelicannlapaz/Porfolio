@@ -5,7 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Angelic Ann La Paz | Portfolio</title>
   <style>
-    /* Reset */
     * {
       margin: 0;
       padding: 0;
@@ -16,7 +15,7 @@
     body {
       background: #fff;
       color: #111;
-      scroll-behavior: smooth; /* smooth scrolling */
+      scroll-behavior: smooth;
     }
 
     /* Navbar */
@@ -60,7 +59,7 @@
       color: #e75480;
     }
 
-    /* Hero */
+    /* Hero Section */
     .hero {
       min-height: 100vh;
       display: flex;
@@ -173,8 +172,8 @@
       color: #e75480;
     }
 
-    /* Responsive */
-    @media (max-width: 768px) {
+    /* Responsive Fix */
+    @media (max-width: 900px) {
       .hero-container {
         flex-direction: column;
         text-align: center;
@@ -186,10 +185,17 @@
 
       nav {
         flex-direction: column;
+        padding: 15px;
       }
 
       nav ul {
+        flex-wrap: wrap;
+        justify-content: center;
         margin-top: 10px;
+      }
+
+      nav ul li {
+        margin: 10px;
       }
     }
   </style>
