@@ -2,63 +2,172 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Angelic Ann La Paz | Portfolio</title>
-  <link rel="stylesheet" href="styles.css" />
-  <!-- Google Font -->
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
-  <!-- Font Awesome (icons) -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Angelic Ann La Paz - Portfolio</title>
+  <!-- Font Awesome for social icons -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      font-family: "Poppins", sans-serif;
+      background-color: #fff;
+      color: #111;
+    }
+
+    /* Navbar */
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 50px;
+      background: #111;
+      position: fixed;
+      width: 100%;
+      top: 0;
+      z-index: 1000;
+    }
+    nav .logo {
+      font-size: 1.5rem;
+      font-weight: bold;
+      color: #e75480;
+    }
+    nav ul {
+      list-style: none;
+      display: flex;
+      margin: 0;
+      padding: 0;
+    }
+    nav ul li {
+      margin-left: 25px;
+    }
+    nav ul li a {
+      text-decoration: none;
+      color: white;
+      font-weight: 500;
+      transition: color 0.3s;
+    }
+    nav ul li a:hover {
+      color: #e75480;
+    }
+
+    /* Hero Section */
+    .hero {
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 100px 50px 50px;
+    }
+    .hero-container {
+      display: flex;
+      align-items: center;
+      max-width: 1100px;
+      width: 100%;
+      gap: 50px;
+    }
+    .hero-photo {
+      flex: 1;
+      display: flex;
+      justify-content: center;
+    }
+    .profile-pic {
+      width: 280px;
+      height: 280px;
+      border-radius: 50%;
+      object-fit: cover;
+      box-shadow: 0 5px 20px rgba(0,0,0,0.15);
+      border: 5px solid #f8c8dc;
+    }
+    .hero-text {
+      flex: 2;
+    }
+    .hero-text h1 {
+      font-size: 2.5rem;
+      margin-bottom: 15px;
+      font-weight: bold;
+    }
+    .hero-text h1 span {
+      color: #e75480;
+    }
+    .hero-text p {
+      font-size: 1.1rem;
+      margin-bottom: 20px;
+      color: #444;
+      max-width: 600px;
+    }
+    .buttons {
+      margin-bottom: 25px;
+    }
+    .btn {
+      display: inline-block;
+      padding: 12px 25px;
+      margin: 5px;
+      background: #e75480;
+      color: white;
+      border-radius: 30px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: background 0.3s, transform 0.2s;
+    }
+    .btn:hover {
+      background: #c7436b;
+      transform: translateY(-2px);
+    }
+    .btn-outline {
+      background: transparent;
+      border: 2px solid #e75480;
+      color: #e75480;
+    }
+    .btn-outline:hover {
+      background: #e75480;
+      color: white;
+    }
+    .socials a {
+      margin: 0 12px 0 0;
+      color: #111;
+      font-size: 1.6rem;
+      transition: color 0.3s, transform 0.2s;
+    }
+    .socials a:hover {
+      color: #e75480;
+      transform: scale(1.1);
+    }
+  </style>
 </head>
 <body>
-  <!-- Header / Navbar -->
-  <header class="site-header">
-    <div class="brand">Angelic</div>
-    <nav class="main-nav">
-      <ul>
-        <li><a href="#home">Home</a></li>
-        <li><a href="#about">About</a></li>
-        <li><a href="#projects">Projects</a></li>
-        <li><a href="#services">Services</a></li>
-        <li><a href="#skills">Skills</a></li>
-        <li><a href="#contact">Contact</a></li>
-      </ul>
-    </nav>
-  </header>
+  <!-- Navbar -->
+  <nav>
+    <div class="logo">Angelic</div>
+    <ul>
+      <li><a href="#">Home</a></li>
+      <li><a href="#">About</a></li>
+      <li><a href="#">Projects</a></li>
+      <li><a href="#">Services</a></li>
+      <li><a href="#">Skills</a></li>
+      <li><a href="#">Contact</a></li>
+    </ul>
+  </nav>
 
-  <!-- Hero -->
-  <section id="home" class="hero">
+  <!-- Hero Section -->
+  <section class="hero">
     <div class="hero-container">
-      <!-- Left: Photo -->
       <div class="hero-photo">
-        <!-- Replace with your actual image file name -->
-        <img src="your-photo.jpg" alt="Angelic Ann La Paz" class="profile-pic">
+        <img src="your-photo.jpg" alt="Your Photo" class="profile-pic">
       </div>
-
-      <!-- Right: Text -->
       <div class="hero-text">
         <h1>Hello, I'm <span>Angelic Ann La Paz</span></h1>
-        <p>
-          I’m a Virtual Assistant with 6+ years in customer service, real estate, and e-commerce support.
-          I help teams stay organized, serve clients fast, and keep operations smooth.
-        </p>
-
-        <div class="hero-actions">
-          <a href="#projects" class="btn btn-solid">View My Work</a>
+        <p>I am a Virtual Assistant with years of experience in customer service and admin support. I help businesses stay organized and thrive online.</p>
+        <div class="buttons">
+          <a href="#projects" class="btn">View My Work</a>
           <a href="resume.pdf" class="btn btn-outline" download>Download Resume</a>
         </div>
-
         <div class="socials">
-          <!-- Replace # with your links -->
-          <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
-          <a href="#" aria-label="GitHub"><i class="fab fa-github"></i></a>
-          <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
-          <a href="#" aria-label="Twitter"><i class="fab fa-x-twitter"></i></a>
+          <a href="https://facebook.com/" target="_blank"><i class="fab fa-facebook"></i></a>
+          <a href="https://linkedin.com/" target="_blank"><i class="fab fa-linkedin"></i></a>
+          <a href="https://github.com/" target="_blank"><i class="fab fa-github"></i></a>
         </div>
       </div>
     </div>
   </section>
-
-  <!-- (We’ll add About/Projects/Services/Skills/Contact sections next) -->
 </body>
 </html>
