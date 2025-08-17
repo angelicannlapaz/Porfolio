@@ -4,38 +4,254 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Angelic Ann La Paz | Portfolio</title>
-  <link rel="stylesheet" href="style.css">
+  <style>
+    /* RESET */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      background: #fff;
+      color: #111;
+    }
 
-  <!-- Font Awesome for Icons -->
+    /* NAVBAR */
+    header {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      background: #fff;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 50px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+      z-index: 1000;
+    }
+    .logo {
+      font-size: 1.5rem;
+      font-weight: bold;
+      color: #e75480;
+    }
+    nav {
+      display: flex;
+      gap: 25px;
+    }
+    nav a {
+      text-decoration: none;
+      color: #111;
+      font-weight: 500;
+      transition: color 0.3s;
+    }
+    nav a:hover {
+      color: #e75480;
+    }
+
+    /* HAMBURGER */
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      cursor: pointer;
+    }
+    .hamburger span {
+      height: 3px;
+      width: 25px;
+      background: #111;
+      margin: 4px 0;
+      border-radius: 3px;
+    }
+    .nav-links {
+      display: flex;
+      gap: 25px;
+    }
+    .nav-links.mobile {
+      display: none;
+      flex-direction: column;
+      position: absolute;
+      top: 60px;
+      right: 50px;
+      background: #fff;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+      padding: 15px 25px;
+      border-radius: 8px;
+    }
+    .nav-links.mobile a {
+      padding: 10px 0;
+    }
+
+    /* HERO */
+    .hero {
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 100px 50px 50px;
+      background: #ffffff;
+    }
+    .hero-container {
+      display: flex;
+      align-items: center;
+      max-width: 1100px;
+      width: 100%;
+      gap: 50px;
+      flex-wrap: wrap;
+    }
+    .hero-photo {
+      flex: 1;
+      display: flex;
+      justify-content: center;
+      opacity: 0;
+      transform: scale(0.8);
+      animation: fadeInPhoto 1.5s ease forwards;
+    }
+    .profile-pic {
+      width: 280px;
+      height: 280px;
+      border-radius: 50%;
+      object-fit: cover;
+      box-shadow: 0 5px 20px rgba(0,0,0,0.15);
+      border: 5px solid #f8c8dc;
+    }
+    @keyframes fadeInPhoto {
+      to {
+        opacity: 1;
+        transform: scale(1);
+      }
+    }
+    .hero-text {
+      flex: 2;
+      color: #111;
+      min-width: 280px;
+      opacity: 0;
+      transform: translateY(20px);
+      animation: fadeInText 1.8s ease forwards 0.5s;
+    }
+    @keyframes fadeInText {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    .hero-text h1 {
+      font-size: 2.5rem;
+      margin-bottom: 15px;
+      font-weight: bold;
+    }
+    .hero-text h1 span {
+      color: #e75480;
+    }
+    .hero-text p {
+      font-size: 1.1rem;
+      margin-bottom: 20px;
+      color: #444;
+      max-width: 600px;
+    }
+    .buttons {
+      margin-bottom: 25px;
+    }
+    .btn {
+      display: inline-block;
+      padding: 12px 25px;
+      margin: 5px;
+      background: #e75480;
+      color: white;
+      border-radius: 30px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: background 0.3s, transform 0.2s;
+    }
+    .btn:hover {
+      background: #c7436b;
+      transform: translateY(-2px);
+    }
+    .btn-outline {
+      background: transparent;
+      border: 2px solid #e75480;
+      color: #e75480;
+    }
+    .btn-outline:hover {
+      background: #e75480;
+      color: white;
+    }
+
+    /* SOCIAL ICONS */
+    .socials {
+      margin-top: 10px;
+    }
+    .socials a {
+      margin: 0 12px 0 0;
+      color: #111;
+      font-size: 1.8rem;
+      transition: color 0.3s, transform 0.2s;
+      text-decoration: none;
+    }
+    .socials a:hover {
+      color: #e75480;
+      transform: scale(1.2);
+    }
+
+    /* RESPONSIVE */
+    @media (max-width: 768px) {
+      nav {
+        display: none;
+      }
+      .hamburger {
+        display: flex;
+      }
+      .hero {
+        padding-top: 120px;
+      }
+      .hero-container {
+        flex-direction: column;
+        text-align: center;
+      }
+      .hero-text {
+        text-align: center;
+      }
+    }
+  </style>
+  <!-- Icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
 <body>
-
-  <!-- Header -->
+  <!-- NAVBAR -->
   <header>
-    <div class="logo">AAL</div>
-    <nav>
-      <ul class="nav-links">
-        <li><a href="#home">Home</a></li>
-        <li><a href="#about">About</a></li>
-        <li><a href="#projects">Projects</a></li>
-        <li><a href="#services">Services</a></li>
-        <li><a href="#skills">Skills</a></li>
-        <li><a href="#contact">Contact</a></li>
-      </ul>
+    <div class="logo">Angelic</div>
+    <nav class="nav-links">
+      <a href="#home">Home</a>
+      <a href="#about">About</a>
+      <a href="#projects">Projects</a>
+      <a href="#services">Services</a>
+      <a href="#skills">Skills</a>
+      <a href="#contact">Contact</a>
     </nav>
+    <div class="hamburger" onclick="toggleMenu()">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+    <div class="nav-links mobile" id="mobileMenu">
+      <a href="#home" onclick="toggleMenu()">Home</a>
+      <a href="#about" onclick="toggleMenu()">About</a>
+      <a href="#projects" onclick="toggleMenu()">Projects</a>
+      <a href="#services" onclick="toggleMenu()">Services</a>
+      <a href="#skills" onclick="toggleMenu()">Skills</a>
+      <a href="#contact" onclick="toggleMenu()">Contact</a>
+    </div>
   </header>
 
-  <!-- Hero Section -->
+  <!-- HERO -->
   <section class="hero" id="home">
     <div class="hero-container">
-      <div class="hero-photo fade-in-left">
-        <img src="your-photo.jpg" alt="Angelic Ann La Paz">
+      <div class="hero-photo">
+        <img src="your-photo.jpg" alt="Your Photo" class="profile-pic">
       </div>
-      <div class="hero-text fade-in-right">
+      <div class="hero-text">
         <h1>Hello, I'm <span>Angelic Ann La Paz</span></h1>
-        <p>I’m a Virtual Assistant and Customer Service Specialist with years of experience helping businesses grow and stay organized.</p>
-        <div class="hero-buttons">
+        <p>I am a virtual assistant with years of experience in customer service, admin support, and online business management. I help clients stay organized and achieve results.</p>
+        <div class="buttons">
           <a href="#projects" class="btn">View My Work</a>
           <a href="resume.pdf" class="btn btn-outline" download>Download Resume</a>
         </div>
@@ -49,5 +265,15 @@
     </div>
   </section>
 
+  <script>
+    function toggleMenu() {
+      const mobileMenu = document.getElementById("mobileMenu");
+      if (mobileMenu.style.display === "flex") {
+        mobileMenu.style.display = "none";
+      } else {
+        mobileMenu.style.display = "flex";
+      }
+    }
+  </script>
 </body>
 </html>
