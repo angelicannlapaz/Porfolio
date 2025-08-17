@@ -9,6 +9,7 @@ body {
   font-family: 'Poppins', sans-serif;
   background-color: white;
   color: #333;
+  overflow-x: hidden;
 }
 
 /* Header */
@@ -70,12 +71,10 @@ header {
   border: 5px solid #ff69b4;
 }
 
-/* Hero Text */
+/* Text */
 .hero-text h1 {
   font-size: 2.5rem;
   margin-bottom: 20px;
-  opacity: 0;
-  animation: fadeSlideRight 1.5s forwards;
 }
 
 .hero-text h1 span {
@@ -86,17 +85,10 @@ header {
   margin-bottom: 20px;
   font-size: 1.1rem;
   max-width: 500px;
-  opacity: 0;
-  animation: fadeSlideRight 1.5s forwards;
-  animation-delay: 0.5s;
 }
 
-/* Buttons */
 .hero-buttons {
   margin-bottom: 20px;
-  opacity: 0;
-  animation: fadeIn 1.5s forwards;
-  animation-delay: 1s;
 }
 
 .btn {
@@ -129,9 +121,6 @@ header {
 /* Social Icons */
 .socials {
   margin-top: 10px;
-  opacity: 0;
-  animation: fadeIn 1.5s forwards;
-  animation-delay: 1.5s;
 }
 
 .socials a {
@@ -147,30 +136,22 @@ header {
 }
 
 /* Animations */
-@keyframes fadeIn {
-  from { opacity: 0; }
-  to { opacity: 1; }
-}
-
-@keyframes fadeSlideRight {
-  from { opacity: 0; transform: translateX(40px); }
+@keyframes fadeInLeft {
+  from { opacity: 0; transform: translateX(-50px); }
   to { opacity: 1; transform: translateX(0); }
 }
 
-@keyframes fadeSlideLeft {
-  from { opacity: 0; transform: translateX(-40px); }
+@keyframes fadeInRight {
+  from { opacity: 0; transform: translateX(50px); }
   to { opacity: 1; transform: translateX(0); }
 }
 
-/* Apply animations to hero image */
-.animate-left img {
-  opacity: 0;
-  animation: fadeSlideLeft 1.5s forwards;
+.fade-in-left {
+  animation: fadeInLeft 2s ease-out;
 }
 
-.animate-right {
-  opacity: 0;
-  animation: fadeSlideRight 1.5s forwards;
+.fade-in-right {
+  animation: fadeInRight 2s ease-out;
 }
 
 /* Responsive */
