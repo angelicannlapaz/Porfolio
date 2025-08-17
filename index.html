@@ -130,10 +130,10 @@
       margin-bottom: 15px;
       font-weight: bold;
       opacity: 0;
-      transform: translateY(20px);
-      animation: fadeInText 1.8s ease forwards 0.5s;
+      transform: translateY(30px);
+      animation: fadeInName 2s ease forwards 0.8s;
     }
-    @keyframes fadeInText {
+    @keyframes fadeInName {
       to {
         opacity: 1;
         transform: translateY(0);
@@ -147,9 +147,23 @@
       margin-bottom: 20px;
       color: #444;
       max-width: 600px;
+      opacity: 0;
+      animation: fadeInText 2s ease forwards 1.3s;
+    }
+    @keyframes fadeInText {
+      to {
+        opacity: 1;
+      }
     }
     .buttons {
       margin-bottom: 25px;
+      opacity: 0;
+      animation: fadeInButtons 2s ease forwards 1.8s;
+    }
+    @keyframes fadeInButtons {
+      to {
+        opacity: 1;
+      }
     }
     .btn {
       display: inline-block;
@@ -179,6 +193,13 @@
     /* SOCIAL ICONS */
     .socials {
       margin-top: 10px;
+      opacity: 0;
+      animation: fadeInSocials 2s ease forwards 2.2s;
+    }
+    @keyframes fadeInSocials {
+      to {
+        opacity: 1;
+      }
     }
     .socials a {
       margin: 0 12px 0 0;
@@ -189,7 +210,7 @@
     }
     .socials a:hover {
       color: #e75480;
-      transform: scale(1.2);
+      transform: scale(1.2) rotate(5deg);
     }
 
     /* RESPONSIVE */
@@ -212,8 +233,8 @@
       }
     }
   </style>
-  <!-- Icons -->
-  <script src="https://kit.fontawesome.com/your-kit-code.js" crossorigin="anonymous"></script>
+  <!-- FontAwesome (free CDN) -->
+  <script src="https://kit.fontawesome.com/4b020bd9e0.js" crossorigin="anonymous"></script>
 </head>
 <body>
   <!-- NAVBAR -->
@@ -250,29 +271,4 @@
       </div>
       <div class="hero-text">
         <h1>Hello, I'm <span>Angelic Ann La Paz</span></h1>
-        <p>I am a virtual assistant with years of experience in customer service, admin support, and online business management. I help clients stay organized and achieve results.</p>
-        <div class="buttons">
-          <a href="#projects" class="btn">View My Work</a>
-          <a href="resume.pdf" class="btn btn-outline" download>Download Resume</a>
-        </div>
-        <div class="socials">
-          <a href="https://linkedin.com/in/your-link" target="_blank"><i class="fab fa-linkedin"></i></a>
-          <a href="https://wa.me/your-number" target="_blank"><i class="fab fa-whatsapp"></i></a>
-          <a href="https://github.com/your-username" target="_blank"><i class="fab fa-github"></i></a>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <script>
-    function toggleMenu() {
-      const mobileMenu = document.getElementById("mobileMenu");
-      if (mobileMenu.style.display === "flex") {
-        mobileMenu.style.display = "none";
-      } else {
-        mobileMenu.style.display = "flex";
-      }
-    }
-  </script>
-</body>
-</html>
+        <p>I am a virtual assistant with years of experience in customer service, admin support, and online business management. I help clie
