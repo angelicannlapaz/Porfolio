@@ -1,294 +1,318 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Angelic Ann La Paz | Portfolio</title>
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-    }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Angelic Ann La Paz Portfolio</title>
+    <!-- Load Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Custom style for the dark, code-patterned hero background -->
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #F5AFAF;
+            scroll-behavior: smooth;
+        }
 
-    body {
-      background: #fff;
-      color: #111;
-      scroll-behavior: smooth;
-    }
+        /* Custom background pattern to mimic code/matrix effect */
+        .hero-background {
+    background-color: #F5AFAF; /* soft pink */
+    background-image: none; /* remove gradient + pattern */
+}
 
-    /* Navbar */
-    nav {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 20px 50px;
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      background: #fff;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-      z-index: 1000;
-    }
+        
+        /* Sticky Navigation Bar Styling */
+        .sticky-nav {
+            top: 0;
+            z-index: 50;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1);
+        }
 
-    nav .logo {
-      font-size: 1.5rem;
-      font-weight: bold;
-      color: #e75480;
-    }
-
-    nav ul {
-      list-style: none;
-      display: flex;
-    }
-
-    nav ul li {
-      margin-left: 25px;
-    }
-
-    nav ul li a {
-      text-decoration: none;
-      color: #111;
-      font-weight: 500;
-      transition: color 0.3s;
-    }
-
-    nav ul li a:hover {
-      color: #e75480;
-    }
-
-    /* Hero Section */
-    .hero {
-      min-height: 100vh;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      padding: 100px 50px 50px;
-      background: #ffffff;
-    }
-
-    .hero-container {
-      display: flex;
-      align-items: center;
-      max-width: 1100px;
-      width: 100%;
-      gap: 50px;
-      flex-wrap: wrap;
-    }
-
-    .hero-photo {
-      flex: 1;
-      display: flex;
-      justify-content: center;
-      opacity: 0;
-      transform: scale(0.8);
-      animation: fadeInPhoto 1.5s ease forwards;
-    }
-
-    .profile-pic {
-      width: 280px;
-      height: 280px;
-      border-radius: 50%;
-      object-fit: cover;
-      box-shadow: 0 5px 20px rgba(0,0,0,0.15);
-      border: 5px solid #f8c8dc;
-    }
-
-    @keyframes fadeInPhoto {
-      to {
-        opacity: 1;
-        transform: scale(1);
-      }
-    }
-
-    .hero-text {
-      flex: 2;
-      color: #111;
-      opacity: 0;
-      transform: translateY(20px);
-      animation: fadeInText 1.8s ease forwards 0.5s;
-    }
-
-    @keyframes fadeInText {
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
-
-    .hero-text h1 {
-      font-size: 2.5rem;
-      margin-bottom: 15px;
-      font-weight: bold;
-    }
-
-    .hero-text h1 span {
-      color: #e75480;
-      border-right: 2px solid #e75480; /* cursor effect */
-      padding-right: 5px;
-      white-space: nowrap;
-      overflow: hidden;
-      display: inline-block;
-    }
-
-    .hero-text p {
-      font-size: 1.1rem;
-      margin-bottom: 20px;
-      color: #444;
-      max-width: 600px;
-    }
-
-    .buttons {
-      margin-bottom: 15px;
-    }
-
-    .btn {
-      display: inline-block;
-      padding: 12px 25px;
-      margin: 5px;
-      background: #e75480;
-      color: white;
-      border-radius: 30px;
-      text-decoration: none;
-      font-weight: 600;
-      transition: background 0.3s, transform 0.2s;
-    }
-
-    .btn:hover {
-      background: #c7436b;
-      transform: translateY(-2px);
-    }
-
-    .btn-outline {
-      background: transparent;
-      border: 2px solid #e75480;
-      color: #e75480;
-    }
-
-    .btn-outline:hover {
-      background: #e75480;
-      color: white;
-    }
-
-    .socials {
-      margin-top: 15px;
-    }
-
-    .socials a {
-      margin: 0 12px 0 0;
-      color: #111;
-      font-size: 1.8rem;
-      transition: color 0.3s, transform 0.2s;
-      text-decoration: none;
-    }
-
-    .socials a:hover {
-      color: #e75480;
-      transform: scale(1.2);
-    }
-
-    /* Sections placeholder */
-    section {
-      padding: 80px 50px;
-      max-width: 1000px;
-      margin: 0 auto;
-    }
-
-    section h2 {
-      font-size: 2rem;
-      margin-bottom: 20px;
-      text-align: center;
-      color: #e75480;
-    }
-
-    /* Responsive Fix */
-    @media (max-width: 900px) {
-      .hero-container {
-        flex-direction: column;
-        text-align: center;
-      }
-
-      .hero-text {
-        margin-top: 20px;
-      }
-
-      nav {
-        flex-direction: column;
-        padding: 15px;
-      }
-
-      nav ul {
-        flex-wrap: wrap;
-        justify-content: center;
-        margin-top: 10px;
-      }
-
-      nav ul li {
-        margin: 10px;
-      }
-    }
-  </style>
-  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+        /* Custom style for card hover effect */
+        .portfolio-card {
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        .portfolio-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.2), 0 4px 6px -4px rgba(0, 0, 0, 0.15);
+        }
+    </style>
 </head>
-<body>
-  <!-- Navbar -->
-  <nav>
-    <div class="logo">AAL</div>
-    <ul>
-      <li><a href="#home">Home</a></li>
-      <li><a href="#about">About</a></li>
-      <li><a href="#projects">Projects</a></li>
-      <li><a href="#services">Services</a></li>
-      <li><a href="#skills">Skills</a></li>
-      <li><a href="#contact">Contact</a></li>
-    </ul>
-  </nav>
+<body class="text-gray-800">
 
-  <!-- Hero Section -->
-  <section class="hero" id="home">
-    <div class="hero-container">
-      <div class="hero-photo">
-        <img src="your-photo.jpg" alt="Your Photo" class="profile-pic">
-      </div>
-      <div class="hero-text">
-        <h1>Hello, I'm <span id="typed-name"></span></h1>
-        <p>I have solid experience in customer service and as a virtual assistant, helping clients stay organized and efficient. I’m passionate about delivering professional and reliable support.</p>
-        <div class="buttons">
-          <a href="#projects" class="btn">View My Work</a>
-          <a href="resume.pdf" class="btn btn-outline" download>Download Resume</a>
+    <!-- 1. HEADER / HERO SECTION -->
+    <header id="home" class="hero-background text-white pt-20 pb-40 relative overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
+
+            <!-- Center Profile Picture -->
+  <div class="mb-4">
+    <img
+        src="https://i.imgur.com/5gnbbvw.jpeg"
+        alt="Your Profile"
+        class="mx-auto w-40 h-40 rounded-full object-cover border-4 border-pink-300 shadow-2xl"
+    >
+</div>
+
+            <h1 class="text-4xl sm:text-5xl font-extrabold tracking-tight mb-2">
+                Angelic Ann La Paz
+            </h1>
+            <p class="text-xl sm:text-2xl font-light text-white-300 mb-10">
+                Real Estate Virtual Assistant | CSR | Intake Specialist 
+                       </p>
+
+            <div class="inline-block relative">
+                <!-- Catchphrase -->
+                <h2 class="text-4xl sm:text-6xl font-black mb-8 leading-tight">
+                    Your Tasks, My Expertise <br>
+                    Efficiency at Your Fingertips.
+                </h2>
+                <!-- Smaller Profile Picture (positioned relative to catchphrase block for visual flair) -->
+                 </div>
         </div>
-        <div class="socials">
-          <a href="mailto:angelicannlapaz24@gmail.com" target="_blank" title="Gmail"><i class="fa-solid fa-envelope"></i></a>
-          <a href="www.linkedin.com/in/angelic-ann-la-paz-6665bb27a" target="_blank" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
-          <a href="https://wa.me/639084623189" target="_blank" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+    </header>
+
+    <!-- 2. NAVIGATION BAR -->
+    <nav id="main-nav" class="sticky sticky-nav bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-center space-x-1 sm:space-x-8">
+                <a href="#home" class="nav-link py-4 px-3 text-sm sm:text-base font-bold transition duration-300"style="color:#EE6983;">HOME</a>
+                <a href="#about" class="nav-link py-4 px-3 text-sm sm:text-base font-bold transition duration-300"style="color:#EE6983; ">ABOUT</a>
+                <a href="#services" class="nav-link py-4 px-3 text-sm sm:text-base font-bold transition duration-300"style="color:#EE6983;">SERVICES</a>
+                <a href="#portfolio" class="nav-link py-4 px-3 text-sm sm:text-base font-bold transition duration-300"style="color:#EE6983;">PORTFOLIO</a>
+                <a href="#contact" class="nav-link py-4 px-3 text-sm sm:text-base font-bold transition duration-300"style="color:#EE6983;">CONTACT</a>
+            </div>
         </div>
-      </div>
-    </div>
-  </section>
+    </nav>
 
-  <!-- Placeholder sections -->
-  <section id="about"><h2>About Me</h2></section>
-  <section id="projects"><h2>Projects</h2></section>
-  <section id="services"><h2>Services</h2></section>
-  <section id="skills"><h2>Skills</h2></section>
-  <section id="contact"><h2>Contact</h2></section>
+    <main>
+        <!-- 3. ABOUT SECTION -->
+        <section id="about" class="py-16 md:py-24 bg-white">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <h2 class="text-2xl font-bold mb-10 text-center uppercase tracking-wider"  style="color: #EE6983;">ABOUT</h2>
+                <div class="flex flex-col md:flex-row items-start md:space-x-12">
+                    
+                    <!-- Left: Profile Image -->
+                    <div class="flex-shrink-0 mb-8 md:mb-0 w-full md:w-1/3 flex justify-center">
+                        <img src="https://i.imgur.com/5gnbbvw.jpeg" alt="Angelic Ann Profile" class="rounded-lg shadow-xl object-cover">
+                    </div>
 
-  <!-- Typing effect script -->
-  <script>
-    const typedName = "Angelic Ann La Paz";
-    let i = 0;
-    const speed = 100; // typing speed in ms
+                    <!-- Right: Text Content -->
+                    <div class="md:w-2/3 space-y-6 text-gray-600 text-lg leading-relaxed">
+                        <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                            <p>
+                                <strong style="color:#EE6983;">Hi! I'm Angel.</strong> As a former SME and Trainer, I’m skilled at guiding teams and delivering solutions that make work smoother. I also have experience in medium-level graphic design, adding a creative touch to my professional services. 
+                                I’m passionate about using technology to help clients succeed and thrive.
+                            </p>
+                            <p>
+                                With over <strong style="color:#EE6983;">six years of experience</strong>, as both a Customer Service Representative and Virtual Assistant in property management, 
+                                I bring a unique blend of reliability, efficiency, and hands-on expertise.
+                            </p>
+                        </div>
+                        <p>
+                            <strong style="color:#EE6983;">Tools I've Used:</strong> Salesforce, Zoho, Canva, Figma, RingDNA, RingCentral, Airtable, NICE, 
+                            ERP, NContac, Oracle, KANA, ActOne, FDR,VRoll, Excel, Word, PowerPoint, Google Docs, Google Sheets, Google Tasks,  Google Calendar, MSTeams, Zoom and Keeps.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-    function typeWriter() {
-      if (i < typedName.length) {
-        document.getElementById("typed-name").innerHTML += typedName.charAt(i);
-        i++;
-        setTimeout(typeWriter, speed);
-      }
-    }
-    window.onload = typeWriter;
-  </script>
+        <!-- 4. SERVICES & PORTFOLIO SECTION -->
+        <section id="services-portfolio" class="py-16 md:py-24 bg-gray-100">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                
+                <!-- SERVICES BLOCK -->
+                <div id="services" class="mb-16">
+                    <h2 class="text-2xl font-bold mb-10 text-center uppercase tracking-wider" style="color: #EE6983;" >SERVICES</h2>
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                        
+                        <!-- Service Card 1 -->
+                        <div class="bg-white p-6 rounded-lg shadow-md border-t-4 border-pink-400">
+                            <div class="flex items-center space-x-3 mb-2">
+                                <span class="text-pink-300 text-2xl">&#9989;</span> <!-- Checkmark icon -->
+                                <h3 class="text-xl font-semibold">Real Estate Virtual Assistant</h3>
+                            </div>
+                            <p class="text-gray-500 text-sm">Handling your property management tasks with precision and care—so you can focus on growing your business</p>
+                        </div>
+
+                        <!-- Service Card 2 -->
+                        <div class="bg-white p-6 rounded-lg shadow-md border-t-4 border-pink-400">
+                            <div class="flex items-center space-x-3 mb-2">
+                                <span class="text-pink-300 text-2xl">&#9881;</span> <!-- Gear icon -->
+                                <h3 class="text-xl font-semibold">Customer Service Representative</h3>
+                            </div>
+                            <p class="text-gray-500 text-sm">Providing friendly, reliable, and prompt support that keeps your clients satisfied and your operations seamless.</p>
+                        </div>
+
+                        <!-- Service Card 3 -->
+                        <div class="bg-white p-6 rounded-lg shadow-md border-t-4 border-pink-400">
+                            <div class="flex items-center space-x-3 mb-2">
+                                <span class="text-pink-300 text-2xl">&#9729;</span> <!-- Cloud icon -->
+                                <h3 class="text-xl font-semibold">Case Intake Specialist</h3>
+                            </div>
+                            <p class="text-gray-500 text-sm">Effortlessly gathering and organizing client information to ensure every case starts smoothly and efficiently</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- PORTFOLIO BLOCK -->
+                <div id="portfolio">
+                    <h2 class="text-2xl font-bold mb-10 text-center uppercase tracking-wider"  style="color: #EE6983;">PORTFOLIO</h2>
+                    
+                    <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-6">
+                        <!-- Portfolio Item 1 -->
+                        <div class="portfolio-card bg-white rounded-xl shadow-lg overflow-hidden cursor-pointer">
+                            <img src="https://i.imgur.com/7MSxyQ9.png" alt="Canva Edits" class="w-full h-24 sm:h-36 object-cover">
+                            <div class="p-3">
+                                <p class="text-sm font-semibold text-pink-800">Canva Edits</p>
+                            </div>
+                        </div>
+
+                        <!-- Portfolio Item 2 -->
+                        <div class="portfolio-card bg-white rounded-xl shadow-lg overflow-hidden cursor-pointer">
+                            <img src="https://i.imgur.com/cpFbhCz.png" alt="Figma Edits" class="w-full h-24 sm:h-36 object-cover">
+                            <div class="p-3">
+                                <p class="text-sm font-semibold text-pink-800">Figma Edits</p>
+                            </div>
+                        </div>
+                        
+                    
+                        <!-- Portfolio Item 3 -->
+                        <div class="portfolio-card bg-white rounded-xl shadow-lg overflow-hidden cursor-pointer">
+                            <img src="https://www.ringcentral.com/content/dam/rc-www/en_us/images/content/whyringcentral/pressimages/dec-2023/logo-jpg-rendition.webp" alt="Customer Service" class="w-full h-24 sm:h-36 object-cover">
+                            <div class="p-3">
+                                <p class="text-sm font-semibold text-pink-800">Customer Service</p>
+                            </div>
+                        </div>
+                        
+                        <!-- Portfolio Item 4 (Placeholder to match the original image layout) -->
+                        <div class="portfolio-card bg-white rounded-xl shadow-lg overflow-hidden cursor-pointer">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f9/Salesforce.com_logo.svg/1200px-Salesforce.com_logo.svg.png" alt="Property Management" class="w-full h-24 sm:h-36 object-cover">
+                            <div class="p-3">
+                                <p class="text-sm font-semibold text-pink-800">Property Management</p>
+                            </div>
+                        </div>
+
+                        <!-- Portfolio Item 6 (Placeholder to match the original image layout) -->
+                        <div class="portfolio-card bg-white rounded-xl shadow-lg overflow-hidden cursor-pointer">
+                            <img src="https://play-lh.googleusercontent.com/sasPZu1DPo4_Msn0wakoc6kmifxIz_43PYYSf8y70FNFsbIxa-71R2jmdvdFvnga5Q" alt="CRM Tools" class="w-full h-24 sm:h-36 object-cover">
+                            <div class="p-3">
+                                <p class="text-sm font-semibold text-pink-800">CRM Tools</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+
+        <!-- 5. CONTACT SECTION -->
+        <section id="contact" class="py-16 md:py-24 bg-white">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <h2 class="text-2xl font-bold mb-10 text-center uppercase tracking-wider" style="color: #EE6983;">CONTACT</h2>
+
+                <div class="max-w-3xl mx-auto p-6 md:p-10 bg-pink-50 rounded-xl shadow-2xl">
+                    <form class="space-y-4">
+                        <div>
+                            <label for="name" class="sr-only">Name</label>
+                            <input type="text" id="name" name="name" placeholder="Name:" class="w-full p-3 border border-pink-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-pink-500" required>
+                        </div>
+                        <div>
+                            <label for="email" class="sr-only">Email</label>
+                            <input type="email" id="email" name="email" placeholder="Email:" class="w-full p-3 border border-pink-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-pink-500" required>
+                        </div>
+                        <div>
+                            <label for="message" class="sr-only">Message</label>
+                            <textarea id="message" name="message" rows="4" placeholder="Message:" class="w-full p-3 border border-pink-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-pink-500" required></textarea>
+                        </div>
+                        <div class="flex justify-end">
+                            <button type="submit" class="bg-pink-600 hover:bg-pink-700 text-white font-bold py-3 px-8 rounded-lg shadow-md transition duration-300 transform hover:scale-105">
+                                SEND
+                            </button>
+                        </div>
+                    </form>
+
+                    <div class="mt-8 text-center border-t pt-6">
+                        <div class="flex justify-center space-x-4 mb-4">
+                            <!-- LinkedIn Icon -->
+                            <a href="#" aria-label="LinkedIn" class="text-gray-500 hover:text-blue-600 transition duration-300">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6">
+                                    <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.559-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.742 7 2.456v6.779z"/>
+                                </svg>
+                            </a>
+                            <!-- Envelope Icon (Email) -->
+                            <a href="mailto:angelicannlapaz24@gmail.com" aria-label="Email" class="text-gray-500 hover:text-blue-600 transition duration-300">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6">
+                                    <path d="M22 6c0-1.1-.9-2-2-2H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6zm-2 0l-8 5-8-5h16zm0 12H4V8l8 5 8-5v10z"/>
+                                </svg>
+                            </a>
+                        </div>
+                        <a href="mailto:angelicannlapaz24@gmail.com" class="text-pink-800 hover:underline font-medium">angelicannlapaz24@gmail.com</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- 6. FOOTER -->
+    <footer class="bg-gray-800 text-white py-4">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-sm">
+            &copy; 2025 Angelic Ann La Paz. All rights reserved.
+        </div>
+    </footer>
+
+    <!-- JAVASCRIPT FOR SCROLLING AND NAVIGATION HIGHLIGHTING -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const navLinks = document.querySelectorAll('.nav-link');
+            const sections = document.querySelectorAll('section, header#home');
+
+            // Function to handle scroll and update active link
+            const updateActiveLink = () => {
+                let current = 'home';
+                sections.forEach(section => {
+                    const sectionTop = section.offsetTop - 100; // Offset for sticky nav
+                    const sectionHeight = section.clientHeight;
+                    if (window.scrollY >= sectionTop && window.scrollY < sectionTop + sectionHeight) {
+                        current = section.getAttribute('id');
+                    }
+                });
+
+                navLinks.forEach(link => {
+                    link.classList.remove('font-bold', 'text-blue-600', 'border-b-2', 'border-blue-600');
+                    link.classList.add('font-medium', 'text-gray-500');
+
+                    if (link.getAttribute('href').substring(1) === current) {
+                        link.classList.add('font-bold', 'text-blue-600', 'border-b-2', 'border-blue-600');
+                        link.classList.remove('font-medium', 'text-gray-500');
+                    }
+                });
+            };
+
+            // Initial call and attach to scroll event
+            updateActiveLink();
+            window.addEventListener('scroll', updateActiveLink);
+            
+            // Minimal JS for form submission feedback (since it's a static site)
+            const contactForm = document.querySelector('#contact form');
+            contactForm.addEventListener('submit', (e) => {
+                e.preventDefault();
+                // In a real application, you would send data to a server here.
+                alert('Thank you for your message! Wilson will be in touch shortly.');
+                contactForm.reset();
+            });
+        });
+    </script>
+    
+    <script type="module">
+        import Chatbot from "https://cdn.jsdelivr.net/gh/wgayo/FlowiseChatEmbed@main/dist/web.js"
+        Chatbot.init({
+        chatflowid: "ffae589e-99b8-4d09-8b6b-5709397eefb6",
+        apiHost: "https://cloud.flowiseai.com",
+        })
+    </script>
 </body>
 </html>
